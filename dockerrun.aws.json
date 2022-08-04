@@ -1,0 +1,25 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "essential": true,
+      "image": "redis",
+      "name": "redis",
+      "memory": 128
+    },
+    {
+      "essential": true,
+      "links": [
+        "redis"
+      ],
+      "name": "web",
+      "memory": 256,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 80
+        }
+      ]
+    }
+  ]
+}
