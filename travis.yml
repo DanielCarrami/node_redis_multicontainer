@@ -6,4 +6,4 @@ before_install:
   - docker build -f Dockerfile.dev -t daniel/noderedis-dev .
 
 script:
-  - docker run daniel/noderedis-dev
+  - docker run daniel/noderedis-dev npm run test
