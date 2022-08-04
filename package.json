@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.17.2",
+    "pug": "*",
+    "redis": "3.1.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}

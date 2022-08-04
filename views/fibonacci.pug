@@ -1,0 +1,14 @@
+doctype 5
+html(lang='es')
+  head
+    style(type='text/css').
+      .container {
+        display: flex; width: 100%; justify-content: center; margin-top: 40px;
+      }
+      .text {
+        font-size: 40px; color: #444;
+      }
+  body
+    div(class='container')
+      form(action='/fibonacci', method='POST')
+        p(class='text') El fibonacci del número #{number} es #{result}

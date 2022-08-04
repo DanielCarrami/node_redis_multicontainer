@@ -1,0 +1,16 @@
+doctype 5
+html(lang='es')
+  head
+    style(type='text/css').
+      .container {
+        display: flex; width: 100%; justify-content: center; margin-top: 40px;
+      }
+      .label {
+        display: block; margin-bottom: 3px
+      }
+  body
+    div(class='container')
+      form(action='/fibonacci', method='POST')
+        label(for='number' class='label') Numero:
+        input(type='text' id='number' name='number' placeholder='Numero')
+        input(type='submit' value='Calcular fibonacci')

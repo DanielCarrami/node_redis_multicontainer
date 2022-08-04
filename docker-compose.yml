@@ -1,0 +1,35 @@
+version: '3'
+services:
+  redis-app:
+    container_name: redis-app
+    image: 'redis'
+    ports:
+      - 6379:6379
+    networks:
+      - redisnet
+    restart: unless-stopped
+    expose:
+      - 6379
+
+  node-app:
+    container_name: node-app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    networks:
+      - redisnet
+    volumes:
+      - /app/node_modules
+      - ./:/app
+    ports:
+      - 80:8000
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: redis-app
+      REDIS_PORT: 6379
+    depends_on:
+      - redis-app
+
+networks:
+  redisnet:
+    driver: bridge
